@@ -10,7 +10,12 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: ['http://localhost:3000', 'https://linkkeep-xyz.vercel.app', 'https://*.vercel.app'],
+  origin: [
+    'http://localhost:3000', 
+    'https://linkkeep.vercel.app',
+    'https://linkkeep-*.vercel.app',
+    /https:\/\/.*\.vercel\.app$/
+  ],
   credentials: true
 }));
 app.use(express.json());
