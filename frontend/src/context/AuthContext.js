@@ -17,6 +17,18 @@ export const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(localStorage.getItem('token'));
 
   useEffect(() => {
+    const getCurrentUser = async () => {
+      try {
+        const response = await authAPI.getCurrentUser();
+        setUser(response.data.user);
+      } catch (error) {
+        console.error('Error getting current user:', error);
+        logout();
+      } finally {
+        setLoading(false);
+      }
+    };
+
     if (token) {
       getCurrentUser();
     } else {
@@ -24,27 +36,15 @@ export const AuthProvider = ({ children }) => {
     }
   }, [token]);
 
-  const getCurrentUser = async () => {
-    try {
-      const response = await authAPI.getCurrentUser();
-      setUser(response.data.user);
-    } catch (error) {
-      console.error('Error getting current user:', error);
-      logout();
-    } finally {
-      setLoading(false);
-    }
-  };
-
   const login = async (email, password) => {
     try {
       const response = await authAPI.login({ email, password });
       const { token, user } = response.data;
-      
+
       localStorage.setItem('token', token);
       setToken(token);
       setUser(user);
-      
+
       return { success: true };
     } catch (error) {
       return {
@@ -58,11 +58,11 @@ export const AuthProvider = ({ children }) => {
     try {
       const response = await authAPI.register({ username, email, password });
       const { token, user } = response.data;
-      
+
       localStorage.setItem('token', token);
       setToken(token);
       setUser(user);
-      
+
       return { success: true };
     } catch (error) {
       return {
