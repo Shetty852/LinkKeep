@@ -74,8 +74,8 @@ A full-stack web application for shortening and managing URLs with user authenti
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Shetty852/linkkeep.git
-   cd linkkeep
+   git clone https://github.com/Shetty852/LinkKeep.git
+   cd LinkKeep
    ```
 
 2. Install backend dependencies:

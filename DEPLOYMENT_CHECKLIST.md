@@ -8,7 +8,7 @@
 
 ## Backend Deployment (Render)
 - [ ] Create new Web Service on Render
-- [ ] Connect GitHub repository
+- [ ] Connect GitHub repository: Shetty852/LinkKeep
 - [ ] Set build command: `cd backend && npm install`
 - [ ] Set start command: `cd backend && npm start`
 - [ ] Add environment variables:
@@ -20,7 +20,7 @@
 
 ## Frontend Deployment (Vercel)
 - [ ] Create new project on Vercel
-- [ ] Connect GitHub repository
+- [ ] Connect GitHub repository: Shetty852/LinkKeep
 - [ ] Set framework preset to "Create React App"
 - [ ] Set build settings:
   - [ ] Build Command: `cd frontend && npm run build`
