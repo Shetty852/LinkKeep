@@ -1,0 +1,42 @@
+{
+  "id": "/",
+  "short_name": "LinkKeep",
+  "name": "LinkKeep - Save & Shorten URLs",
+  "description": "Save, organize and shorten your URLs with LinkKeep",
+  "icons": [
+    {
+      "src": "icons/icon-192x192.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512x512.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "icons/icon-512x512.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "LinkKeep Desktop View"
+    },
+    {
+      "src": "icons/icon-192x192.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "label": "LinkKeep Mobile View"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "categories": ["productivity", "utilities"],
+  "lang": "en"
+}
