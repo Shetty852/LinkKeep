@@ -9,7 +9,10 @@ dotenv.config(); // ✅ Make sure this is at the top
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: ['http://localhost:3000', 'https://linkkeep-xyz.vercel.app', 'https://*.vercel.app'],
+  credentials: true
+}));
 app.use(express.json());
 
 // Routes
@@ -18,11 +21,23 @@ app.use('/api/links', require('./routes/links'));
 app.use('/s', require('./routes/redirect'));
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI, {
+console.log('Environment check:');
+console.log('NODE_ENV:', process.env.NODE_ENV);
+console.log('PORT:', process.env.PORT);
+console.log('MONGODB_URI exists:', !!process.env.MONGODB_URI);
+console.log('JWT_SECRET exists:', !!process.env.JWT_SECRET);
+
+const mongoUri = process.env.MONGODB_URI;
+if (!mongoUri) {
+  console.error('MONGODB_URI environment variable is not set!');
+  process.exit(1);
+}
+
+mongoose.connect(mongoUri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
-.then(() => console.log('MongoDB connected'))
+.then(() => console.log('MongoDB connected successfully'))
 .catch(err => console.error('MongoDB connection error:', err));
 
 // Basic route
