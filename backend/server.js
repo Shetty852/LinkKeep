@@ -12,9 +12,10 @@ const app = express();
 app.use(cors({
   origin: [
     'http://localhost:3000', 
+    'https://linkkeep-2877o1w3c-rohans-projects-845bc57f.vercel.app',
     'https://linkkeep.vercel.app',
-    'https://linkkeep-*.vercel.app',
-    /https:\/\/.*\.vercel\.app$/
+    /https:\/\/linkkeep-.*\.vercel\.app$/,
+    /https:\/\/.*rohans-projects-.*\.vercel\.app$/
   ],
   credentials: true
 }));
