@@ -2,11 +2,11 @@
 
 <div align="center">
 
-![LinkKeep Logo](linkkeep.vercel.app)
+![LinkKeep Logo](https://img.shields.io/badge/LinkKeep-URL%20Shortener-blue?style=for-the-badge&logo=link&logoColor=white)
 
 **⚡ A modern, full-stack URL shortener with user authentication and analytics**
 
-[![Live Demo](https://img.shields.io/badge/🌐%20Live%20Demo-Visit%20App-success?style=for-the-badge)](https://linkkeep-backend-dim3.onrender.com)
+[![Live Demo](https://img.shields.io/badge/🌐%20Live%20Demo-Visit%20App-success?style=for-the-badge)]([https://linkkeep-backend-dim3.onrender.com](https://linkkeep-ks6o852jn-rohans-projects-845bc57f.vercel.app))
 [![GitHub Repo](https://img.shields.io/badge/📂%20GitHub-Repository-black?style=for-the-badge&logo=github)](https://github.com/Shetty852/LinkKeep)
 [![API Status](https://img.shields.io/badge/🔌%20API-Online-green?style=for-the-badge)](https://linkkeep-backend-dim3.onrender.com)
 
