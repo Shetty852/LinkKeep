@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![LinkKeep Logo](https://img.shields.io/badge/LinkKeep-URL%20Shortener-blue?style=for-the-badge&logo=link&logoColor=white)
+![LinkKeep Logo](linkkeep.vercel.app)
 
 **⚡ A modern, full-stack URL shortener with user authentication and analytics**
 
