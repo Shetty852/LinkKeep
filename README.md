@@ -1,35 +1,47 @@
-# Link Shortener - Full Stack MERN Application
+# LinkKeep - URL Shortener & Manager 🔗
 
-A full-stack web application for creating and managing shortened URLs, built with the MERN stack (MongoDB, Express.js, React, Node.js).
+A full-stack web application for shortening and managing URLs with user authentication, built with the MERN stack and deployed on modern cloud platforms.
 
-## Features
+## 🚀 Live Demo
+
+- **Frontend**: [https://linkkeep-2877o1w3c-rohans-projects-845bc57f.vercel.app](https://linkkeep-2877o1w3c-rohans-projects-845bc57f.vercel.app)
+- **Backend API**: [https://linkkeep-backend-dim3.onrender.com](https://linkkeep-backend-dim3.onrender.com)
+
+## ✨ Features
 
 ### 🔐 User Authentication
-- User registration and login with JWT tokens
+- Secure user registration and login with JWT tokens
 - Protected API routes and frontend pages
-- Secure password hashing with bcrypt
-- Token-based authentication stored in localStorage
+- Password hashing with bcryptjs
+- Persistent authentication with localStorage
 
 ### 🔗 Link Management
-- Create shortened URLs with custom names and descriptions
+- Create shortened URLs with custom aliases
 - Automatically generated 6-character short codes
-- View all your created links in a dashboard
+- Personal dashboard to manage all your links
 - Edit link details (name, URL, description)
 - Delete unwanted links
-- Click tracking for each shortened URL
+- Real-time click tracking and analytics
 
-### 🚀 Short URL Redirection
-- Public redirect endpoint `/s/:shortCode`
+### 🚀 URL Redirection
+- Fast public redirect endpoint `/s/:shortCode`
 - Automatic click counting
-- Redirects to original URL seamlessly
+- Seamless redirection to original URLs
+
+### 📱 Progressive Web App (PWA)
+- Installable on mobile and desktop
+- Offline capability
+- App-like experience
+- Custom icons and splash screens
 
 ### 💻 Modern UI/UX
-- Responsive design that works on all devices
-- Clean, modern interface with custom CSS
+- Fully responsive design for all devices
+- Clean, modern interface with custom styling
 - Real-time feedback and error handling
-- Copy-to-clipboard functionality for short URLs
+- Copy-to-clipboard functionality
+- Loading states and user feedback
 
-## Tech Stack
+## 🛠️ Tech Stack
 
 ### Backend
 - **Node.js** - Runtime environment
@@ -42,42 +54,86 @@ A full-stack web application for creating and managing shortened URLs, built wit
 - **express-validator** - Input validation
 
 ### Frontend
-- **React** - UI library
-- **React Router** - Client-side routing
-- **Axios** - HTTP client
-- **Context API** - State management
-- **CSS** - Custom styling (no frameworks)
+- **React 19.1.0** - Modern UI library
+- **React Router DOM** - Client-side routing
+- **Axios** - HTTP client for API calls
+- **Context API** - Global state management
+- **Lucide React** - Modern icon library
+- **Progressive Web App** - PWA capabilities
 
-## Project Structure
+### Deployment & DevOps
+- **Frontend**: Deployed on **Vercel**
+- **Backend**: Deployed on **Render**
+- **Database**: **MongoDB Atlas** (Cloud)
+- **Version Control**: **GitHub**
+- **CI/CD**: Automatic deployments on push
+
+## 📁 Project Structure
 
 ```
-link-shortener-app/
+LinkKeep/
 ├── backend/
 │   ├── models/
-│   │   ├── User.js
-│   │   └── Link.js
+│   │   ├── User.js          # User schema and model
+│   │   └── Link.js          # Link schema and model
 │   ├── routes/
-│   │   ├── auth.js
-│   │   ├── links.js
-│   │   └── redirect.js
+│   │   ├── auth.js          # Authentication endpoints
+│   │   ├── links.js         # Link management endpoints
+│   │   └── redirect.js      # Short URL redirection
 │   ├── middleware/
-│   │   └── auth.js
-│   ├── .env
-│   ├── server.js
-│   └── package.json
+│   │   └── auth.js          # JWT authentication middleware
+│   ├── .env                 # Environment variables
+│   ├── server.js            # Express server setup
+│   └── package.json         # Backend dependencies
 ├── frontend/
 │   ├── src/
 │   │   ├── components/
-│   │   │   └── PrivateRoute.js
+│   │   │   └── PrivateRoute.js    # Protected route component
 │   │   ├── pages/
-│   │   │   ├── Login.js
-│   │   │   ├── Register.js
-│   │   │   └── Dashboard.js
+│   │   │   ├── Login.js           # Login page
+│   │   │   ├── Register.js        # Registration page
+│   │   │   └── Dashboard.js       # Main dashboard
 │   │   ├── context/
-│   │   │   └── AuthContext.js
+│   │   │   └── AuthContext.js     # Authentication state
 │   │   ├── services/
-│   │   │   └── api.js
-│   │   ├── App.js
+│   │   │   └── api.js             # API service layer
+│   │   ├── App.js                 # Main app component
+│   │   └── index.js               # App entry point
+│   ├── public/
+│   │   ├── manifest.json          # PWA manifest
+│   │   └── icons/                 # App icons
+│   └── package.json               # Frontend dependencies
+├── vercel.json                     # Vercel deployment config
+├── DEPLOYMENT.md                   # Deployment guide
+└── README.md                       # This file
+```
+
+## 🚀 Getting Started
+
+### Try the Live App
+Visit [LinkKeep](https://linkkeep-2877o1w3c-rohans-projects-845bc57f.vercel.app) to try the live application:
+
+1. **Register** a new account or **Login**
+2. **Create** your first short link
+3. **Share** the shortened URL
+4. **Track** clicks and manage your links
+
+### API Endpoints
+The backend API is available at: `https://linkkeep-backend-dim3.onrender.com`
+
+**Authentication:**
+- `POST /api/auth/register` - Register new user
+- `POST /api/auth/login` - User login
+- `GET /api/auth/me` - Get current user
+
+**Links Management:**
+- `GET /api/links` - Get user's links
+- `POST /api/links` - Create new short link
+- `PUT /api/links/:id` - Update link
+- `DELETE /api/links/:id` - Delete link
+
+**Redirection:**
+- `GET /s/:shortCode` - Redirect to original URL
 │   │   └── index.js
 │   └── package.json
 ├── package.json
@@ -91,56 +147,82 @@ link-shortener-app/
 - MongoDB Atlas account
 - Git
 
+## 💻 Local Development
+
+### Prerequisites
+- Node.js (v16 or higher)
+- npm or yarn
+- MongoDB Atlas account
+
 ### 1. Clone the Repository
 ```bash
-git clone <your-repo-url>
-cd link-shortener-app
+git clone https://github.com/Shetty852/LinkKeep.git
+cd LinkKeep
 ```
 
 ### 2. Install Dependencies
-```bash
-# Install root dependencies
-npm install
 
-# Install backend dependencies
+**Backend:**
+```bash
 cd backend
 npm install
+```
 
-# Install frontend dependencies
+**Frontend:**
+```bash
 cd ../frontend
 npm install
 ```
 
-### 3. Environment Configuration
+### 3. Environment Setup
 
-Create a `.env` file in the `backend` directory:
-
+**Backend (.env):**
 ```env
 PORT=5000
-MONGODB_URI=mongodb+srv://your-username:your-password@your-cluster.mongodb.net/linkshortener?retryWrites=true&w=majority
-JWT_SECRET=your-super-secret-jwt-key-here-make-it-long-and-random
+MONGODB_URI=mongodb+srv://your-username:your-password@cluster0.mongodb.net/linkkeep?retryWrites=true&w=majority
+JWT_SECRET=your-super-secret-jwt-key
 NODE_ENV=development
 ```
 
-**Important:** Replace the MongoDB URI with your actual MongoDB Atlas connection string.
+**Frontend (.env):**
+```env
+REACT_APP_API_URL=http://localhost:5000
+```
 
-### 4. MongoDB Atlas Setup
+### 4. Run the Application
 
-1. Create a free account at [MongoDB Atlas](https://www.mongodb.com/atlas)
-2. Create a new cluster
-3. Create a database user
-4. Whitelist your IP address
-5. Get your connection string and update the `.env` file
-
-### 5. Running the Application
-
-#### Development Mode (Recommended)
-Run both frontend and backend simultaneously:
+**Backend (Terminal 1):**
 ```bash
+cd backend
 npm run dev
 ```
 
-#### Separate Terminals
+**Frontend (Terminal 2):**
+```bash
+cd frontend
+npm start
+```
+
+Visit `http://localhost:3000` to see the application.
+
+## 🌍 Deployment
+
+This project is configured for easy deployment:
+
+### Frontend (Vercel)
+- Automatic deployment from GitHub
+- Environment variables configured
+- Custom domain support available
+
+### Backend (Render)
+- Automatic deployment from GitHub
+- Environment variables: PORT, MONGODB_URI, JWT_SECRET, NODE_ENV
+- Free tier with auto-sleep
+
+### Database (MongoDB Atlas)
+- Cloud-hosted MongoDB
+- Free tier available
+- Automatic backups and scaling
 ```bash
 # Terminal 1 - Backend
 npm run server
@@ -241,8 +323,92 @@ To use a custom domain for short URLs, update the frontend API base URL and depl
 2. Set environment variables in Heroku dashboard
 3. Deploy using Git or GitHub integration
 
-### Frontend Deployment (Netlify/Vercel)
-1. Build the React app: `npm run build`
+## 📊 Features Showcase
+
+### Dashboard
+- View all your shortened links
+- Real-time click statistics
+- Edit and delete links
+- Copy links to clipboard
+
+### Link Creation
+- Paste any URL to shorten
+- Optional custom alias
+- Add descriptions for organization
+- Instant short link generation
+
+### Analytics
+- Track click counts
+- View creation dates
+- Monitor link performance
+
+## 🔧 API Documentation
+
+### Authentication Required
+All link management endpoints require a valid JWT token in the Authorization header:
+```
+Authorization: Bearer <your-jwt-token>
+```
+
+### Response Format
+All API responses follow this format:
+```json
+{
+  "success": true,
+  "data": {...},
+  "message": "Success message"
+}
+```
+
+## 🛡️ Security Features
+
+- JWT-based authentication
+- Password hashing with bcryptjs
+- Protected API routes
+- CORS configuration
+- Input validation and sanitization
+- Environment-based configuration
+
+## 🚀 Performance
+
+- **Frontend**: Fast React SPA with code splitting
+- **Backend**: Optimized Express.js API
+- **Database**: MongoDB with indexed queries
+- **CDN**: Static assets served via Vercel Edge Network
+- **Caching**: Efficient data fetching and state management
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 📞 Contact
+
+**Rohan Shetty**
+- GitHub: [@Shetty852](https://github.com/Shetty852)
+- Project Link: [https://github.com/Shetty852/LinkKeep](https://github.com/Shetty852/LinkKeep)
+- Live Demo: [https://linkkeep-2877o1w3c-rohans-projects-845bc57f.vercel.app](https://linkkeep-2877o1w3c-rohans-projects-845bc57f.vercel.app)
+
+## 🙏 Acknowledgments
+
+- React team for the amazing frontend library
+- Express.js for the robust backend framework
+- MongoDB for the flexible database solution
+- Vercel for seamless frontend deployment
+- Render for reliable backend hosting
+
+---
+
+⭐ Star this repository if you found it helpful!
 2. Deploy the `build` folder to your hosting service
 3. Update API base URL for production
 
