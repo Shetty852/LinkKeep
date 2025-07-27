@@ -3,7 +3,7 @@
 URL shortener built with React and Node.js
 
 ## Demo
-- API: https://linkkeep.vercel.app
+- Live: https://linkkeep.vercel.app
 
 ## Features
 - Shorten long URLs
